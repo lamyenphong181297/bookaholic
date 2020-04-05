@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 import { Container, Col, Modal, Image, Row } from "react-bootstrap";
 import BookCard from "../book-card/book-card.component";
+<<<<<<< HEAD
 import CommentList from "../comment-list/comment-list.component";
+=======
+import CommentBox from "../comment-box/comment-box.component";
+>>>>>>> master
 
 import "./review-modal.styles.scss";
 
@@ -13,7 +17,10 @@ class ReviewModal extends Component {
     this.state = {
       show: false,
     };
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
   }
 
   changeShowState = () => {
@@ -65,7 +72,11 @@ class ReviewModal extends Component {
                   </Row>
                   <Row>
                     <Col>
+<<<<<<< HEAD
                       <CommentList bookId={this.props.book.book_id} />
+=======
+                      <CommentBox />
+>>>>>>> master
                     </Col>
                   </Row>
                 </Col>
