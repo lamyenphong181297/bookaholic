@@ -4,6 +4,8 @@ import BookCardList from './components/book-card-list/book-card-list.component';
 
 import BOOKS_DATA from './data/books.data';
 
+import Logo from './assets/bookaholic.png';
+
 import './App.css';
 
 import ReviewModal from './components/review-modal/review-modal.component';
@@ -30,10 +32,11 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.books[0]);
     return (
       <div className='App'>
-        <h1 align='center'>BOOKAHOLIC</h1>
+        <div align='center'>
+          <img alt='logo' src={Logo} width='200px' />
+        </div>
         <ReviewModal
           changeShowState={this.changeShowState}
           book={this.state.books[0]}
