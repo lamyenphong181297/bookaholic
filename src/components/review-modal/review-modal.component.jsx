@@ -13,7 +13,6 @@ class ReviewModal extends Component {
     this.state = {
       show: false,
     };
-
   }
 
   changeShowState = () => {
