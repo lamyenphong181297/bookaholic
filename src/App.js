@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
 import BookCardList from './components/book-card-list/book-card-list.component';
+import SearchBox from './components/search-box/search-box.component';
+import ReviewModal from './components/review-modal/review-modal.component';
 
 import BOOKS_DATA from './data/books.data';
 
 import Logo from './assets/bookaholic.png';
 
 import './App.css';
-
-import ReviewModal from './components/review-modal/review-modal.component';
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +25,8 @@ class App extends Component {
     this.setState({ books: BOOKS_DATA.slice(0, 10) });
   }
 
+  handleChange = (e) => this.setState({ searchField: e.target.value });
+
   changeShowState = () => {
     this.setState((prevState) => ({
       show: !prevState.show,
@@ -32,17 +34,23 @@ class App extends Component {
   };
 
   render() {
+    const { books, searchField } = this.state;
+    const filteredBooks = books.filter((book) =>
+      book.original_title.toLowerCase().includes(searchField.toLowerCase())
+    );
+
     return (
       <div className='App'>
-        <div align='center'>
+        <div>
           <img alt='logo' src={Logo} width='200px' />
         </div>
+        <SearchBox placeholder='Search' handleChange={this.handleChange} />
         <ReviewModal
           changeShowState={this.changeShowState}
           book={this.state.books[0]}
           show={this.state.show}
         />
-        <BookCardList books={this.state.books} />
+        <BookCardList books={filteredBooks} />
       </div>
     );
   }
