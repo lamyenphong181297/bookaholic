@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 import ReviewModal from '../review-modal/review-modal.component';
 
@@ -8,7 +9,9 @@ const BookCardList = (props) => {
   return (
     <div className='book-card-list'>
       {props.books.map((book) => (
-        <ReviewModal key={book.book_id} book={book} />
+        <LazyLoad once>
+          <ReviewModal key={book.book_id} book={book} />
+        </LazyLoad>
       ))}
     </div>
   );

@@ -14,19 +14,16 @@ class App extends Component {
     super(props);
 
     this.state = {
-      books: [],
+      books: BOOKS_DATA,
       searchField: '',
     };
-  }
-
-  componentDidMount() {
-    this.setState({ books: BOOKS_DATA.slice(0, 10) });
   }
 
   handleChange = (e) => this.setState({ searchField: e.target.value });
 
   render() {
     const { books, searchField } = this.state;
+
     const filteredBooks = books.filter((book) =>
       book.original_title.toLowerCase().includes(searchField.toLowerCase())
     );
