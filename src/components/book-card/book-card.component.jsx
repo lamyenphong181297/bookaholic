@@ -2,14 +2,14 @@ import React from 'react';
 import './book-card.styles.scss';
 
 const BookCard = ({
-  book: { title, authors, image_url, original_publication_year },
+  book: { title, authors, image_url, original_publication_year, original_title },
 }) => (
   <div className='card-container'>
     <div className='cover-container'>
       <img alt={title} src={image_url} />
     </div>
     <div className='details'>
-      <h2>{title}</h2>
+      <h2>{original_title}</h2>
       <h3>{authors}</h3>
       <p>{original_publication_year}</p>
     </div>
