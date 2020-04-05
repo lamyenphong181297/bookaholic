@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import BookCardList from './components/book-card-list/book-card-list.component';
 import SearchBox from './components/search-box/search-box.component';
-import ReviewModal from './components/review-modal/review-modal.component';
 
 import BOOKS_DATA from './data/books.data';
 
@@ -17,7 +16,6 @@ class App extends Component {
     this.state = {
       books: [],
       searchField: '',
-      show: false,
     };
   }
 
@@ -26,12 +24,6 @@ class App extends Component {
   }
 
   handleChange = (e) => this.setState({ searchField: e.target.value });
-
-  changeShowState = () => {
-    this.setState((prevState) => ({
-      show: !prevState.show,
-    }));
-  };
 
   render() {
     const { books, searchField } = this.state;
@@ -45,11 +37,6 @@ class App extends Component {
           <img alt='logo' src={Logo} width='200px' />
         </div>
         <SearchBox placeholder='Search' handleChange={this.handleChange} />
-        <ReviewModal
-          changeShowState={this.changeShowState}
-          book={this.state.books[0]}
-          show={this.state.show}
-        />
         <BookCardList books={filteredBooks} />
       </div>
     );

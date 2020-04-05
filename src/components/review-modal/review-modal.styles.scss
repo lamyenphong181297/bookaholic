@@ -9,3 +9,12 @@
 .book-info__label {
   color: black;
 }
+
+.review-modal {
+  .book-card-container {
+    height: 100%;
+    background-color: lavender;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
