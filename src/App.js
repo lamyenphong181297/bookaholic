@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import BookCardList from './components/book-card-list/book-card-list.component';
+
 import BOOKS_DATA from './data/books.data';
 
 import './App.css';
@@ -10,7 +12,7 @@ class App extends Component {
 
     this.state = {
       books: [],
-      searchField: ''
+      searchField: '',
     };
   }
 
@@ -21,7 +23,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>BOOKAHOLIC</h1>
+        <h1 align='center'>BOOKAHOLIC</h1>
+        <BookCardList books={this.state.books} />
       </div>
     );
   }

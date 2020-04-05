@@ -1,0 +1,30 @@
+.card-container {
+  display: flex;
+  background-color: lavender;
+  border-radius: 5px;
+  padding: 15px;
+  cursor: pointer;
+
+  .cover-container {
+    width: 25%;
+    padding-right: 15px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .details {
+    width: 70%;
+    padding: 0px 10px;
+    text-align-last: left;
+
+    h3 {
+      color: darkslategray;
+    }
+
+    p {
+      font-style: italic;
+    }
+  }
+}
